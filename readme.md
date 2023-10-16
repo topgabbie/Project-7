@@ -1,8 +1,9 @@
 # Topic: Devops Tooling Website Solution
 
-# Objective : To implement a 3-tier Application Architecture with a single Database and a NFS Server as a Shared Files Storage
+## Objective : To implement a 3-tier Application Architecture with a single Database and a NFS Server as a Shared Files Storage
 
-# Project Components:
+## Project Components
+
 - Infrastructure: AWS
 - Webserver Linux: Red Hat Enterprise Linux 8
 - Database Server: Ubuntu 20.04 + MySQL
@@ -10,32 +11,30 @@
 - Storage Server: Red Hat Enterprise Linux 8 + NFS Server
 - Programming Language: PHP
 - Code Repository: GitHub
- 
-**Please note that the NFS server. Database severs and the 3 webservers are created in the same security group hence have same subnet CIDR. This is not ideal in a production environment for security reasons**
 
-# Configuring the NFS-Sever
+## Please note that the NFS server. Database severs and the 3 webservers are created in the same security group hence have same subnet CIDR. This is not ideal in a production environment for security reasons
 
+## Configuring the NFS-Sever
 
+## Steps
 
-**Steps**
-
-1. Create and launch the NFS instance. 
+1. Create and launch the NFS instance.
 
    Three EBS volumes of 10gb each was created in the same availability zone as the webserver and attached to the webserver instance.
 
     ![ebs](images/NFS-server-volume.png)
 
-2. Next step was to login to the NFS server instance and configure the disk          partitions. 
+2. Next step was to login to the NFS server instance and configure the disk partitions.
 
-   I used the command below to confirm if the volumes attached above are available in our NFS instance. 
+   I used the command below to confirm if the volumes attached above are available in our NFS instance.
+
+        lsblk
 
      ![lsblk](images/lsblk_confm.png)
 
-
-
 3. After the confirmation, the next step was to partition the instance using the gdisk type of partitioning. 
 
-# Partitioning the NFS-SERVER and creating all Volumes:
+## Partitioning the NFS-SERVER and creating all Volumes:
 
 1. To confirm the free space on the server, the command below was used. 
 
