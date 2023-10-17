@@ -36,7 +36,7 @@
 
 ## Partitioning the NFS-SERVER and creating all Volumes:
 
-1. To confirm the free space on the server, the command below was used. 
+1. To confirm the free space on the server, the co:mmand below was used. 
 
         df -h 
 
@@ -49,10 +49,9 @@
     **output**
     ![gdisk](../project_6/images/gidisk_page.png)
 
-
 3. The gdisk command was repeated to create other partitions. 
 
-4. lvm2 was created with the command below 
+4. lvm2 was created with the command below
 
         sudo yum install lvm2
     run the command below to confirm if lvm has been created
@@ -291,12 +290,10 @@ Run the command below after the exports file has been configured as shows above 
        ![function](images/function.php.png)   
 18. cd into the tooling directory of webserver 1and apply tooling-db.sql script to the database using te command: 
 
-        mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql
+        mysql -h <databse-private-ip> -u <db-username> -p <db-name> < tooling-db.sql
 
 19. Open the website in your browser with the webserver's public IP and login with the website `username:my user` and password `user`
-    
+
     ![final](images/devopweb.png)
 
-
-
-**END**
+## End
