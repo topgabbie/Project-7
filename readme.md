@@ -159,13 +159,13 @@ Each of the logical volumes will be assigned 14gb each.
     ![nfs](images/nfs-status.png)
 18. The next step is to set up permission that will allow our Web servers to read, write and execute files on NFS with the commands below
 
-     sudo chown -R nobody: /mnt/apps
-     sudo chown -R nobody: /mnt/logs
-     sudo chown -R nobody: /mnt/opt
-     sudo chmod -R 777 /mnt/apps
-     sudo chmod -R 777 /mnt/logs
-     sudo chmod -R 777 /mnt/opt
-     sudo systemctl restart nfs-server.service
+            sudo chown -R nobody: /mnt/apps
+            sudo chown -R nobody: /mnt/logs
+            sudo chown -R nobody: /mnt/opt
+            sudo chmod -R 777 /mnt/apps
+            sudo chmod -R 777 /mnt/logs
+            sudo chmod -R 777 /mnt/opt
+            sudo systemctl restart nfs-server.service
 
 19. Export the subnet CIDR for the NFS server on AWS portal.
      ![cidr](images/subnet%20cidr.png)  
